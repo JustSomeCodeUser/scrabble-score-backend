@@ -116,3 +116,102 @@ CREATE DATABASE scrabble_score;
      }
    ]
    ```
+
+## Postman Collection
+Here's a JSON collection that could be imported into Postman for testing the API endpoints.
+
+```json
+{
+	"info": {
+		"_postman_id": "bfe26480-6b64-42ed-88b7-c7a577d443dd",
+		"name": "Scrabble Score Backend",
+		"description": "A Postman collection for testing the Scrabble Score Backend endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6728125"
+	},
+	"item": [
+		{
+			"name": "Calculate Score",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"word\": \"hello\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/scores/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"scores",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Score",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"playerName\": \"Player1\",\"scores\": [{\"word\": \"HELLO\",\"score\": 8},{\"word\": \"WORLD\",\"score\": 12}]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/scores/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"scores",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Top Scores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/scores/top",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"scores",
+						"top"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
+```
+
